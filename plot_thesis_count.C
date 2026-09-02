@@ -10,7 +10,7 @@
 #include <iostream>
 using namespace std;
 
-const int colors[] = {kBlue, kMagenta, kRed, kBlack, 38, 46, kViolet-8, 30, kPink+1};
+const int colors[] = {kBlue, kMagenta, kRed, kBlack, 38, 46, kViolet-8, 30, kPink-9};
 
 TGraph* thesis_count_graph(const char* name, bool offset)
 {
@@ -45,11 +45,11 @@ void plot_thesis_count(bool offset)
   gStyle->SetOptStat(false);
   gStyle->SetTimeOffset(0);
 
-  const int nNames=8;
-  const char* names[nNames] = { "Dan", "kirsty", "tom", "abbey", "phil", "gemma", "justin", "phill" };
-  const char* upperNames[nNames] = { "Dan", "Kirsty", "Tom", "Abbey", "Phil", "Gemma", "Justin", "Phill" };
+  const int nNames=9;
+  const char* names[nNames] = { "Dan", "kirsty", "tom", "abbey", "phil", "gemma", "justin", "phill", "Abbey_B" };
+  const char* upperNames[nNames] = { "Dan", "Kirsty", "Tom", "Abbey", "Phil", "Gemma", "Justin", "Phill", "Abbey B." };
   vector<TGraph*> graphs;
-  for(int i=0; i< (offset ? nNames : nNames-3); ++i)
+  for(int i=0; i<nNames; ++i)
     graphs.push_back(thesis_count_graph(names[i], offset));
 
 
